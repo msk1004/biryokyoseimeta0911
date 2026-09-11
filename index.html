@@ -123,6 +123,29 @@
   .ig-pattern-card h5 { font-size: 12.5px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
   .ig-pattern-card p { font-size: 12px; color: #555; line-height: 1.8; }
 
+  /* リーチ比較インフォグラフィック */
+  .reach-wrap { background:#fff; border: 1px solid var(--border); border-radius:10px; padding: 22px 24px; margin-top: 18px; }
+  .reach-title { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+  .reach-sub { font-size: 11px; color: #999; margin-bottom: 16px; }
+  .reach-row { display:flex; align-items:center; gap: 12px; margin-bottom: 12px; }
+  .reach-row:last-child { margin-bottom: 0; }
+  .reach-label { width: 210px; font-size: 11.5px; font-weight: 700; color: var(--text); flex-shrink:0; line-height: 1.5; }
+  .reach-label small { display:block; font-weight:400; color:#999; font-size: 10.5px; margin-top: 1px; }
+  .reach-bar-wrap { flex:1; background:var(--bg-soft); border-radius: 20px; height: 18px; overflow:hidden; }
+  .reach-bar { height:100%; background: linear-gradient(90deg, var(--primary), var(--primary-d)); display:flex; align-items:center; justify-content:flex-end; padding-right:10px; }
+  .reach-bar.accent { background: linear-gradient(90deg, #ffb877, var(--accent)); }
+  .reach-bar span { font-size: 10px; color:#fff; font-weight:700; white-space:nowrap; }
+
+  /* 送客要因ランキング */
+  .factor-list { margin-top: 18px; }
+  .factor-item { display:flex; gap: 14px; background:#fff; border:1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 12px; }
+  .factor-item:last-child { margin-bottom: 0; }
+  .factor-num { width: 28px; height: 28px; border-radius: 50%; background: var(--primary); color:#fff; font-size: 13px; font-weight:800; display:inline-flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .factor-item:nth-child(1) .factor-num { background: var(--accent); }
+  .factor-body h5 { font-size: 13px; font-weight:700; color: var(--text); margin-bottom: 4px; }
+  .factor-body .evidence { display:inline-block; font-size: 10px; color: var(--primary-d); background: var(--primary-l); padding: 2px 8px; border-radius: 10px; margin-bottom: 6px; }
+  .factor-body p { font-size: 12px; color:#555; line-height: 1.85; }
+
   /* クリエイティブ案 */
   .cre-card {
     background: #fff; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 18px;
@@ -241,9 +264,6 @@
       <span class="badge hot">機器×経営塾セット提供</span>
       <span class="badge">日本美容企業大賞2026 2冠</span>
     </div>
-    <div class="hero-visual">
-      <img src="素材画像/01_hero_機器と施術風景.png" alt="AMATERASU・CryoCellの施術風景">
-    </div>
   </div>
 </header>
 
@@ -302,16 +322,6 @@
         </table>
       </div>
     </div>
-    <div class="img-gallery">
-      <div class="img-card">
-        <img src="素材画像/03_AMATERASU単体商品写真.png" alt="AMATERASU本体">
-        <div class="cap"><strong>AMATERASU（IPL光美容機器）</strong>国内最高峰スペックを謳う自社開発機器</div>
-      </div>
-      <div class="img-card">
-        <img src="素材画像/07_日本美容企業大賞2026授賞式.jpg" alt="日本美容企業大賞2026授賞式">
-        <div class="cap"><strong>日本美容企業大賞2026 2冠受賞</strong>製品開発部門・スクール/アカデミー部門でW受賞</div>
-      </div>
-    </div>
   </section>
 
   <!-- 3. 参考アカウント分析 -->
@@ -351,14 +361,112 @@
           </p>
         </div>
       </div>
-      <div class="img-gallery" style="margin-top:16px;">
-        <div class="img-card">
-          <img src="素材画像/05_毛穴ケアBeforeAfter.jpg" alt="導入サロンの毛穴ケアBefore/After">
-          <div class="cap"><strong>導入サロンの施術実績例①</strong>毛穴ケアのBefore/After。型Aで使われる実績訴求の元ネタ</div>
+
+      <div class="reach-wrap">
+        <div class="reach-title">📊 投稿タイプ別リーチ比較（直近投稿・リール再生回数）</div>
+        <div class="reach-sub">投稿313件中、直近投稿を中心に抽出したサンプル値（Instagram公開画面で閲覧できる再生回数・いいね数ベース。Meta Business Suiteの詳細分析値ではありません）</div>
+        <div class="reach-row">
+          <div class="reach-label">原体験ストーリー×Before/After<small>「元そばかすだらけだった私が」</small></div>
+          <div class="reach-bar-wrap"><div class="reach-bar accent" style="width:100%;"><span>1.7万回再生</span></div></div>
         </div>
-        <div class="img-card">
-          <img src="素材画像/06_美肌オーロラRF_BeforeAfter.jpg" alt="導入サロンの美肌オーロラRF施術Before/After">
-          <div class="cap"><strong>導入サロンの施術実績例②</strong>美肌オーロラRFのBefore/After。同様に実績訴求で活用可能</div>
+        <div class="reach-row">
+          <div class="reach-label">好奇心ギャップ系フック<small>「虫眼鏡で目玉焼きは焼ける？」自由研究ネタ</small></div>
+          <div class="reach-bar-wrap"><div class="reach-bar" style="width:94%;"><span>1.6万回再生</span></div></div>
+        </div>
+        <div class="reach-row">
+          <div class="reach-label">Before/After密着カット<small>「肌を移植したいとまで悩んだ」</small></div>
+          <div class="reach-bar-wrap"><div class="reach-bar" style="width:65%;"><span>1.1万回再生</span></div></div>
+        </div>
+        <div class="reach-row">
+          <div class="reach-label">スピリチュアル・自己啓発系<small>「ライオンズゲート全開」</small></div>
+          <div class="reach-bar-wrap"><div class="reach-bar" style="width:36%;"><span>6,125回再生</span></div></div>
+        </div>
+        <div class="reach-row">
+          <div class="reach-label">育児・子連れの日常カット<small>「週4・月100万」時短仕組み化との併記</small></div>
+          <div class="reach-bar-wrap"><div class="reach-bar" style="width:25%;"><span>4,254回再生</span></div></div>
+        </div>
+        <div class="reach-row">
+          <div class="reach-label">開業を問いかけるフックコピー<small>「売上0でも開業届は出しますか？」</small></div>
+          <div class="reach-bar-wrap"><div class="reach-bar" style="width:14%;"><span>2,439回再生</span></div></div>
+        </div>
+        <div class="reach-row">
+          <div class="reach-label">明示的な無料説明会CTA投稿<small>「無料Zoom説明会｜9月日程」</small></div>
+          <div class="reach-bar-wrap"><div class="reach-bar" style="width:9%;"><span>いいね16件</span></div></div>
+        </div>
+      </div>
+
+      <div class="factor-list">
+        <div class="factor-item">
+          <div class="factor-num">1</div>
+          <div class="factor-body">
+            <span class="evidence">最大1.7万回再生</span>
+            <h5>原体験ストーリー×Before/Afterの自己開示</h5>
+            <p>
+              「そばかすだらけだった私が、なぜ機器開発者になれたのか」という自己開示とBefore/After画像の組み合わせが
+              サンプル中最大のリーチを獲得。感情移入させた上で「特別な才能はいらない」という再現性メッセージにつなげ、
+              プロフィール（ハイライト「2025実績」「導入店の結果」）→説明会フォームへの入口として最も効いていると推測されます。
+            </p>
+          </div>
+        </div>
+        <div class="factor-item">
+          <div class="factor-num">2</div>
+          <div class="factor-body">
+            <span class="evidence">1.6万回再生</span>
+            <h5>好奇心ギャップ型フックによる新規層へのリーチ拡張</h5>
+            <p>
+              「虫眼鏡で目玉焼きは焼けるか」という本業と直接関係のない自由研究ネタが、Before/After投稿に匹敵する再生数を記録。
+              業種を問わず「気になる」で止める投稿がアカウント全体の露出を底上げし、本流のシミケア・開業訴求投稿への
+              新規流入経路になっていると考えられます。
+            </p>
+          </div>
+        </div>
+        <div class="factor-item">
+          <div class="factor-num">3</div>
+          <div class="factor-body">
+            <span class="evidence">1,900〜4,254回再生</span>
+            <h5>「未経験・ママでも」を体現する育児・家族の日常カット</h5>
+            <p>
+              子連れでの車移動や親子ショットなど生活感のある投稿が、キャンペーン告知系（1,963〜2,439回）と同水準以上の
+              再生を獲得。プロフィール文言「未経験・ママでも“週4で月100万”」を体現する実例提示として、
+              ターゲット層（開業志望のママ・子育て中オーナー）の共感形成に寄与していると推測されます。
+            </p>
+          </div>
+        </div>
+        <div class="factor-item">
+          <div class="factor-num">4</div>
+          <div class="factor-body">
+            <span class="evidence">静止画単体で24いいね（サンプル中上位）</span>
+            <h5>導入サロンオーナーの実名コメントによる第三者証言（UGC）</h5>
+            <p>
+              「シミだけを追いかけ気付いたこと」投稿では、導入サロン「horo.beauty」様ご本人が実名でコメント返信。
+              大岐様ご自身の発信より第三者の声の方が信頼性の担保として働きやすく、説明会申込へのハードルを
+              下げる要因になっていると推測されます。
+            </p>
+          </div>
+        </div>
+        <div class="factor-item">
+          <div class="factor-num">5</div>
+          <div class="factor-body">
+            <span class="evidence">静止画で38いいね（サンプル中最高水準）</span>
+            <h5>売り込み色の薄い実益・お役立ちコンテンツ</h5>
+            <p>
+              「夏のおしっこの色、見ていますか？」という健康情報投稿が、サンプル中最も高いいいね数を記録。
+              直接的な営業色を抑えた投稿がフォロー解除を防ぎ、"保存したくなるお役立ちアカウント"として
+              滞在・接触頻度を伸ばす土台になっていると考えられます。
+            </p>
+          </div>
+        </div>
+        <div class="factor-item">
+          <div class="factor-num">6</div>
+          <div class="factor-body">
+            <span class="evidence">投稿単体はいいね16件と相対的に低め</span>
+            <h5>明示的な「無料Zoom説明会」CTA投稿そのもの</h5>
+            <p>
+              説明会日程を直接告知する投稿自体は、再生・反応の水準としては上位の投稿より控えめでした。
+              単独の集客エンジンというより、1〜5の投稿で興味を持ったフォロワーがハイライト経由で流入する
+              「受け皿」として機能している可能性が高いと考えられます。
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -565,10 +673,6 @@
   <section class="section">
     <div class="sec-label">Flow</div>
     <h2 class="sec-heading"><span class="icon">🔄</span>運用フロー</h2>
-    <div class="img-card" style="margin-bottom:16px;">
-      <img src="素材画像/08_研修施術トレーニング風景.jpg" alt="サロンオーナー向け技術研修の様子" style="height:220px;">
-      <div class="cap"><strong>美療矯正協会のスクール研修風景</strong>「機器×経営塾」の“経営塾”パートを支える実践型研修の実際の様子</div>
-    </div>
     <div class="flow">
       <div class="flow-step">
         <div class="flow-num">1</div>
