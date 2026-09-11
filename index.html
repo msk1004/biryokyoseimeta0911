@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>美療矯正協会様 Meta広告運用ご提案</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --primary:   #8ec664;
+    --primary-d: #6ea83f;
+    --primary-l: #eef6e6;
+    --accent:    #ff6900;
+    --accent-l:  #fff1e6;
+    --text:      #333333;
+    --muted:     #888888;
+    --bg:        #ffffff;
+    --bg-soft:   #f7f9f4;
+    --border:    #e8e8e3;
+  }
+  body {
+    font-family: 'Yu Gothic', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'BIZ UDPGothic', Meiryo, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    font-size: 15px;
+    line-height: 1.8;
+  }
+  .hero {
+    background: var(--bg-soft);
+    padding: 56px 40px 48px;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero-inner { max-width: 960px; margin: 0 auto; }
+  .hero-org {
+    font-size: 12px; color: var(--muted); letter-spacing: 0.06em; margin-bottom: 18px;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--primary); color: #fff;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+    padding: 6px 16px; border-radius: 6px; margin-bottom: 20px;
+  }
+  .hero h1 { font-size: 28px; font-weight: 700; letter-spacing: 0.01em; line-height: 1.55; color: var(--text); margin-bottom: 16px; }
+  .hero h1 em { color: var(--primary-d); font-style: normal; }
+  .hero-sub { font-size: 14px; color: #555; max-width: 640px; line-height: 1.95; }
+  .hero-visual {
+    margin-top: 28px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+  .hero-visual img { display: block; width: 100%; max-height: 280px; object-fit: cover; }
+  .hero-badges { display: flex; gap: 10px; margin-top: 24px; flex-wrap: wrap; }
+  .badge {
+    background: #fff; border: 1px solid var(--border);
+    color: #555; font-size: 12px; padding: 6px 14px; border-radius: 6px;
+  }
+  .badge.hot { background: var(--primary); border-color: var(--primary); color: #fff; font-weight: 700; }
+
+  .wrap { max-width: 960px; margin: 0 auto; padding: 52px 24px 76px; }
+  .section { margin-bottom: 54px; }
+  .sec-label { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--primary-d); margin-bottom: 8px; }
+  .sec-heading {
+    font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 22px;
+    padding-bottom: 12px; border-bottom: 2px solid var(--primary-l);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .sec-heading .icon {
+    width: 30px; height: 30px; background: var(--primary); border-radius: 8px;
+    display: inline-flex; align-items: center; justify-content: center; font-size: 15px;
+  }
+
+  .intro-box {
+    background: var(--bg-soft); border-left: 4px solid var(--primary);
+    padding: 20px 24px; border-radius: 0 8px 8px 0;
+    font-size: 14px; color: #444; line-height: 1.95;
+    margin-bottom: 16px;
+  }
+  .intro-box strong { color: var(--text); }
+
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .info-card {
+    background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 20px 22px;
+  }
+  .info-card h4 { font-size: 13px; color: var(--primary-d); font-weight: 700; margin-bottom: 10px; }
+  .info-card ul { padding-left: 18px; font-size: 12.5px; color: #444; line-height: 1.9; }
+  .info-card table { width: 100%; font-size: 12.5px; border-collapse: collapse; }
+  .info-card td { padding: 4px 0; vertical-align: top; }
+  .info-card td.k { color: #999; width: 34%; white-space: nowrap; }
+
+  /* 画像ギャラリー */
+  .img-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+  .img-card { background: #fff; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+  .img-card img { display: block; width: 100%; height: 190px; object-fit: cover; }
+  .img-card .cap { padding: 10px 14px; font-size: 11.5px; color: #666; line-height: 1.6; }
+  .img-card .cap strong { color: var(--text); font-size: 12.5px; display: block; margin-bottom: 2px; }
+
+  /* インフォグラフィック：ドーナツチャート */
+  .donut-card { display: flex; align-items: center; gap: 20px; background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 20px 22px; }
+  .donut-legend { flex: 1; }
+  .donut-legend .item { display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: #444; margin-bottom: 8px; }
+  .donut-legend .dot { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
+  .donut-legend .item strong { color: var(--text); margin-left: auto; font-size: 13px; }
+
+  /* インフォグラフィック：ファネル */
+  .funnel-wrap { display: flex; align-items: stretch; gap: 0; margin-top: 18px; }
+  .funnel-step { flex: 1; text-align: center; position: relative; padding: 0 6px; }
+  .funnel-bar { background: linear-gradient(180deg, var(--primary), var(--primary-d)); border-radius: 8px 8px 0 0; display: flex; align-items: flex-end; justify-content: center; color: #fff; font-weight: 800; padding-bottom: 8px; }
+  .funnel-step:nth-child(2) .funnel-bar { background: linear-gradient(180deg, #a9d386, var(--primary)); }
+  .funnel-step:nth-child(3) .funnel-bar { background: linear-gradient(180deg, #c9e6b3, #a9d386); }
+  .funnel-label { font-size: 11px; color: #888; margin-top: 8px; }
+  .funnel-arrow { display: flex; align-items: center; color: #ccc; font-size: 18px; padding: 0 2px; align-self: center; }
+
+  /* SNS参考分析 */
+  .ig-wrap { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 24px 26px; }
+  .ig-head { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+  .ig-avatar { width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-d));flex-shrink:0; }
+  .ig-name { font-size:14px; font-weight:700; color:var(--text); }
+  .ig-handle { font-size:11.5px; color:#999; }
+  .ig-pattern { display:grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+  .ig-pattern-card {
+    background: var(--bg-soft); border-radius: 8px; padding: 16px 18px; border-top: 3px solid var(--primary);
+  }
+  .ig-pattern-card.accent { border-top-color: var(--accent); }
+  .ig-pattern-card h5 { font-size: 12.5px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+  .ig-pattern-card p { font-size: 12px; color: #555; line-height: 1.8; }
+
+  /* クリエイティブ案 */
+  .cre-card {
+    background: #fff; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 18px;
+  }
+  .cre-head {
+    background: var(--primary); color: #fff; padding: 13px 20px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .cre-num {
+    width: 24px; height: 24px; border-radius: 50%; background: rgba(255,255,255,0.25);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700; flex-shrink: 0;
+  }
+  .cre-title { font-size: 14px; font-weight: 700; }
+  .cre-tag { margin-left: auto; font-size: 10.5px; background: rgba(255,255,255,0.2); padding: 3px 10px; border-radius: 12px; color: #fff; }
+  .cre-body { padding: 20px 22px; }
+  .cre-visual {
+    display: block; width: 100%; max-width: 340px; margin: 0 auto 18px;
+    border-radius: 8px; border: 1px solid var(--border);
+  }
+  .cre-visual-note {
+    text-align: center; font-size: 11px; color: var(--accent); font-weight: 700; margin: -12px auto 16px; max-width: 340px;
+  }
+  .cre-body .row { display: flex; gap: 10px; margin-bottom: 10px; font-size: 12.5px; }
+  .cre-body .row .label { flex-shrink:0; width: 92px; font-weight: 700; color: var(--primary-d); }
+  .cre-body .row .val { color: #333; line-height: 1.85; }
+  .cre-body .row .val a { color: var(--accent); font-weight: 700; text-decoration: none; }
+  .cre-copy {
+    background: var(--bg-soft); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0;
+    padding: 12px 16px; font-size: 12.5px; color: #555; line-height: 1.9; margin-top: 8px;
+  }
+
+  /* 遷移先CTA */
+  .cta-box {
+    background: var(--accent-l); border: 1.5px solid #ffcfa3; border-radius: 10px;
+    padding: 20px 24px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+  }
+  .cta-box .cta-label { font-size: 12px; color: #a85300; font-weight: 700; }
+  .cta-box .cta-url { font-size: 13px; }
+  .cta-box a.cta-btn {
+    display: inline-block; background: var(--accent); color: #fff; font-size: 13px; font-weight: 700;
+    padding: 10px 22px; border-radius: 6px; text-decoration: none; margin-left: auto;
+  }
+
+  /* 予算シミュレーター */
+  .sim-box {
+    background: linear-gradient(135deg, var(--primary-d), var(--primary)); border-radius: 12px; padding: 30px 32px; color: #fff;
+  }
+  .sim-title { font-size: 12px; font-weight: 700; letter-spacing: 0.08em; color: rgba(255,255,255,0.85); margin-bottom: 6px; }
+  .sim-budget { font-size: 34px; font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
+  .sim-budget small { font-size: 15px; font-weight: 600; color: rgba(255,255,255,0.75); margin-left: 6px; }
+  .sim-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .sim-item { background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 16px; text-align: center; }
+  .sim-val { font-size: 22px; font-weight: 900; color: #fff; line-height: 1; margin-bottom: 4px; }
+  .sim-val span { font-size: 12.5px; font-weight: 600; color: rgba(255,255,255,0.75); }
+  .sim-key { font-size: 11px; color: rgba(255,255,255,0.8); margin-top: 6px; }
+  .sim-note { margin-top: 16px; font-size: 11px; color: rgba(255,255,255,0.75); line-height: 1.8; }
+
+  .alloc-wrap { background:#fff; border: 1px solid var(--border); border-radius:10px; padding: 24px 26px; margin-top: 18px; }
+  .alloc-row { display:flex; align-items:center; gap: 14px; margin-bottom: 14px; }
+  .alloc-row:last-child { margin-bottom: 0; }
+  .alloc-label { width: 170px; font-size: 12.5px; font-weight: 700; color: var(--text); flex-shrink:0; }
+  .alloc-bar-wrap { flex:1; background:var(--bg-soft); border-radius: 20px; height: 20px; overflow:hidden; }
+  .alloc-bar { height:100%; background: linear-gradient(90deg, var(--primary), var(--primary-d)); display:flex; align-items:center; justify-content:flex-end; padding-right:10px; }
+  .alloc-bar span { font-size: 10.5px; color:#fff; font-weight:700; }
+  .alloc-amt { width: 60px; text-align:right; font-size:12.5px; font-weight:700; color:#999; flex-shrink:0; }
+
+  .flow { display: flex; gap: 0; align-items: stretch; background: #fff; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+  .flow-step { flex: 1; padding: 22px 16px; text-align: center; position: relative; border-right: 1px solid var(--border); }
+  .flow-step:last-child { border-right: none; }
+  .flow-step::after { content: '›'; position: absolute; right: -10px; top: 50%; transform: translateY(-50%); font-size: 20px; color: #ccc; z-index: 1; font-weight: 300; }
+  .flow-step:last-child::after { display: none; }
+  .flow-num { width: 26px; height: 26px; background: var(--primary); color: #fff; border-radius: 50%; font-size: 12px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 8px; }
+  .flow-title { font-size: 12px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+  .flow-desc { font-size: 11px; color: #666; line-height: 1.65; }
+
+  .price-box { background: var(--accent-l); border: 1.5px solid #ffcfa3; border-radius: 10px; padding: 26px 30px; }
+  .price-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #ffe0c2; }
+  .price-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .price-item { font-size: 14px; font-weight: 600; color: #333; }
+  .price-item small { font-size: 11.5px; color: #888; font-weight: 400; margin-left: 6px; }
+  .price-val { font-size: 17px; font-weight: 700; color: var(--text); }
+  .price-val.rec { color: var(--accent); font-size: 20px; }
+
+  .caution-box { margin-top:18px; background:#fdf7ee; border:1.5px solid #f0d9ae; border-radius:10px; padding:18px 22px; }
+  .caution-box p.head { font-size:12.5px; color:#96690f; font-weight:700; margin-bottom:6px; }
+  .caution-box ul { font-size:12px; color:#7a5c1e; line-height:1.9; padding-left:18px; }
+
+  .footer { border-top: 1px solid var(--border); padding: 28px 24px; text-align: center; font-size: 11.5px; color: #aaa; max-width: 960px; margin: 0 auto; line-height: 1.9; }
+
+  @media(max-width: 700px){
+    .info-grid, .ig-pattern { grid-template-columns: 1fr; }
+    .sim-grid { grid-template-columns: 1fr; }
+    .flow { flex-direction: column; }
+    .flow-step::after { display: none; }
+    .hero h1 { font-size: 22px; }
+    .alloc-label { width: 110px; font-size: 11.5px; }
+    .cta-box a.cta-btn { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-org">一般社団法人美療矯正協会　大岐飛鳥様　御中</div>
+    <div class="hero-eyebrow">Meta広告運用ご提案</div>
+    <h1>「機器×経営塾」の再現性を、<br><em>エステティック通信のアカウント</em>から、必要とされている方へ届ける。</h1>
+    <p class="hero-sub">
+      エステティック通信アカウントでのMeta広告運用プランのご提案です。
+      クリエイティブ案4案と、初回お試し価格でのスタートプランをご用意いたしました。
+    </p>
+    <div class="hero-badges">
+      <span class="badge">全国80店舗導入</span>
+      <span class="badge">倒産ゼロ</span>
+      <span class="badge hot">機器×経営塾セット提供</span>
+      <span class="badge">日本美容企業大賞2026 2冠</span>
+    </div>
+    <div class="hero-visual">
+      <img src="素材画像/01_hero_機器と施術風景.png" alt="AMATERASU・CryoCellの施術風景">
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- 1. ご提案の背景 -->
+  <section class="section">
+    <div class="sec-label">Background</div>
+    <h2 class="sec-heading"><span class="icon">📝</span>ご提案の背景</h2>
+    <div class="intro-box">
+      「広告運用にチャレンジしてみたいが、何が正解か分からない」「何が問い合わせ・売上アップに
+      つながっているのかが見えづらく、実行に踏み切れなかった」というお悩みをお伺いしております。
+      そこで今回は、エステティック通信が保有するアカウントを使ったMeta広告運用として、
+      以下2点を軸にご提案いたします。
+    </div>
+    <div class="info-grid">
+      <div class="info-card">
+        <h4>① ご提案の前提</h4>
+        <ul>
+          <li>機器（AMATERASU / CryoCell）には必ず「経営塾」がセットであることを訴求の軸とする</li>
+          <li>機器単体の性能訴求ではなく、"経営が安定する仕組み"としての訴求に一貫させる</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h4>② クリエイティブの方向性</h4>
+        <ul>
+          <li>大岐様ご自身の実績をもとにした「再現性」を伝えるパターン</li>
+          <li>開業予定者・若手サロン様向けの「経営塾セミナー」を訴求するパターン</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 現状の整理 -->
+  <section class="section">
+    <div class="sec-label">Current Status</div>
+    <h2 class="sec-heading"><span class="icon">🏢</span>現状の整理</h2>
+    <div class="info-grid">
+      <div class="info-card">
+        <h4>組織概要</h4>
+        <table>
+          <tr><td class="k">名称</td><td>一般社団法人美療矯正協会</td></tr>
+          <tr><td class="k">拠点</td><td>宮崎県宮崎市</td></tr>
+          <tr><td class="k">代表理事</td><td>大岐飛鳥様（美容職17年以上・サロン運営13年目）</td></tr>
+          <tr><td class="k">加盟実績</td><td>全国80店舗導入・倒産ゼロ（2026年6月時点）</td></tr>
+          <tr><td class="k">受賞歴</td><td>日本美容企業大賞2026 2冠／HPBビューティー最優秀サロン2020</td></tr>
+        </table>
+      </div>
+      <div class="info-card">
+        <h4>提供商材・サービス</h4>
+        <table>
+          <tr><td class="k">機器</td><td>AMATERASU（IPL光美容）／CryoCell（脂肪冷却）</td></tr>
+          <tr><td class="k">技術コース</td><td>小顔矯正／フェイシャル／ヘッドスパ／痩身スリミング（LMS付）</td></tr>
+          <tr><td class="k">経営支援</td><td>集客支援・開業支援・リピート戦略・人材育成</td></tr>
+          <tr><td class="k">助成金</td><td>人材開発支援制度の対象コースあり</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="img-gallery">
+      <div class="img-card">
+        <img src="素材画像/03_AMATERASU単体商品写真.png" alt="AMATERASU本体">
+        <div class="cap"><strong>AMATERASU（IPL光美容機器）</strong>国内最高峰スペックを謳う自社開発機器</div>
+      </div>
+      <div class="img-card">
+        <img src="素材画像/07_日本美容企業大賞2026授賞式.jpg" alt="日本美容企業大賞2026授賞式">
+        <div class="cap"><strong>日本美容企業大賞2026 2冠受賞</strong>製品開発部門・スクール/アカデミー部門でW受賞</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 参考アカウント分析 -->
+  <section class="section">
+    <div class="sec-label">Reference Account</div>
+    <h2 class="sec-heading"><span class="icon">📱</span>参考アカウント分析：大岐様ご本人のInstagram発信</h2>
+    <div class="ig-wrap">
+      <div class="ig-head">
+        <div class="ig-avatar"></div>
+        <div>
+          <div class="ig-name">大岐飛鳥｜小さなサロン売上UP専門家</div>
+          <div class="ig-handle">@asuka_shimiamaterasu　フォロワー1,117人／投稿313件</div>
+        </div>
+      </div>
+      <p style="font-size:13px;color:#444;line-height:1.9;">
+        大岐様ご本人のアカウントは「全国80店舗が導入／再現できる経営の型／未経験・ママでも“週4で月100万”サロン開業」
+        というプロフィール文言のもと、「2025実績」「導入店の声」「導入店の結果」「売上仕組み」「補助金」「開業＆売上MAP」
+        といったハイライトで“経営の再現性”を一貫して発信されています。説明会への誘導効果が高い投稿を拝見したところ、
+        以下2つの型が中心であることが確認できました。
+      </p>
+      <div class="ig-pattern">
+        <div class="ig-pattern-card accent">
+          <h5>型A：原体験ストーリー×Before/After×実績数値</h5>
+          <p>
+            「そばかすだらけだった私が、なぜ機器開発者になれたのか」という自己開示から始まり、
+            Before/After写真、「月商100万円超」「220万円達成」「600万円達成」といった導入店の
+            具体的数値、「特別な経験や才能があったわけではない」という共感訴求で構成されています。
+          </p>
+        </div>
+        <div class="ig-pattern-card">
+          <h5>型B：無料Zoom説明会への低ハードル誘導</h5>
+          <p>
+            「全国どこからでも参加OK」「参加費無料｜スマホからもOK｜顔出し不要」
+            「資料が欲しいだけの方も大歓迎」と参加ハードルを徹底的に下げた上で、
+            「体力・価格競争から解放される仕組み経営」というベネフィットを提示し、
+            説明会予約フォームへの導線に集約されています。
+          </p>
+        </div>
+      </div>
+      <div class="img-gallery" style="margin-top:16px;">
+        <div class="img-card">
+          <img src="素材画像/05_毛穴ケアBeforeAfter.jpg" alt="導入サロンの毛穴ケアBefore/After">
+          <div class="cap"><strong>導入サロンの施術実績例①</strong>毛穴ケアのBefore/After。型Aで使われる実績訴求の元ネタ</div>
+        </div>
+        <div class="img-card">
+          <img src="素材画像/06_美肌オーロラRF_BeforeAfter.jpg" alt="導入サロンの美肌オーロラRF施術Before/After">
+          <div class="cap"><strong>導入サロンの施術実績例②</strong>美肌オーロラRFのBefore/After。同様に実績訴求で活用可能</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. クリエイティブ案4案 -->
+  <section class="section">
+    <div class="sec-label">Creative Proposals</div>
+    <h2 class="sec-heading"><span class="icon">🎨</span>Meta広告クリエイティブ案（4案）</h2>
+    <p style="font-size:13px;color:#555;line-height:1.9;margin-bottom:18px;">
+      すべてのクリエイティブは、下記の説明会申込フォームへの遷移を必須の着地点とします。
+    </p>
+    <div class="cta-box" style="margin-bottom:22px;">
+      <div>
+        <div class="cta-label">広告の飛ばし先（必須）</div>
+        <div class="cta-url">シミケアAMATERASU説明会＆無料個別相談（Zoom・60分・顔出し不要）</div>
+      </div>
+      <a class="cta-btn" href="https://biryokyosei.or.jp/faq/amatearsuform/" target="_blank" rel="noopener">説明会フォームを見る</a>
+    </div>
+
+    <div class="cre-card">
+      <div class="cre-head">
+        <span class="cre-num">1</span>
+        <span class="cre-title">再現性訴求｜大岐様ストーリー×導入実績</span>
+        <span class="cre-tag">型A準拠</span>
+      </div>
+      <div class="cre-body">
+        <img class="cre-visual" src="素材画像/AI生成クリエイティブ/案1_再現性訴求_1x1.png" alt="クリエイティブ案1：再現性訴求バナー">
+        <div class="row"><div class="label">ターゲット</div><div class="val">開業予定〜運営3年未満の個人〜小規模サロンオーナー様</div></div>
+        <div class="row"><div class="label">ビジュアル</div><div class="val">大岐様ご本人の顔写真＋Before/After（ご自身のシミ改善実例）＋「月商100万円超／220万円／600万円達成」の実績バッジ</div></div>
+        <div class="row"><div class="label">CTA</div><div class="val"><a href="https://biryokyosei.or.jp/faq/amatearsuform/" target="_blank" rel="noopener">無料Zoom説明会に申し込む（参加必須）</a></div></div>
+        <div class="cre-copy">
+          「そばかすだらけだった私が、なぜ美容機器の開発者になれたのか。」特別な才能ではなく、
+          “経営の仕組み”を変えただけ。全国80店舗で再現されている理由を、無料説明会でお話しします。
+        </div>
+      </div>
+    </div>
+
+    <div class="cre-card">
+      <div class="cre-head">
+        <span class="cre-num">2</span>
+        <span class="cre-title">機器×経営塾セット訴求｜「導入＝経営塾」の一体提供</span>
+      </div>
+      <div class="cre-body">
+        <img class="cre-visual" src="素材画像/AI生成クリエイティブ/案2_機器×経営塾セット訴求_1x1.png" alt="クリエイティブ案2：機器×経営塾セット訴求バナー">
+        <div class="row"><div class="label">ターゲット</div><div class="val">機器導入を検討中だが「使いこなせるか」「集客できるか」に不安があるオーナー様</div></div>
+        <div class="row"><div class="label">ビジュアル</div><div class="val">機器写真＋「導入＝機器＋経営塾」の図解（1枚で両方セットであることが伝わる構成）</div></div>
+        <div class="row"><div class="label">CTA</div><div class="val"><a href="https://biryokyosei.or.jp/faq/amatearsuform/" target="_blank" rel="noopener">仕組みの全体像を無料説明会で見る（参加必須）</a></div></div>
+        <div class="cre-copy">
+          機器を導入しても、使いこなせなければ意味がありません。だから美療矯正協会は
+          “機器＋経営塾”をセットでお届けします。高単価×短時間×高リピートを、仕組みごと。
+        </div>
+      </div>
+    </div>
+
+    <div class="cre-card">
+      <div class="cre-head">
+        <span class="cre-num">3</span>
+        <span class="cre-title">開業者・若手向け経営塾セミナー訴求</span>
+        <span class="cre-tag">型B準拠</span>
+      </div>
+      <div class="cre-body">
+        <img class="cre-visual" src="素材画像/AI生成クリエイティブ/案3_開業者若手向け経営塾セミナー訴求_1x1.png" alt="クリエイティブ案3：開業者・若手向け経営塾セミナー訴求バナー">
+        <div class="row"><div class="label">ターゲット</div><div class="val">未経験・ママ開業希望者様、若いサロン経営者様（経験浅め）</div></div>
+        <div class="row"><div class="label">ビジュアル</div><div class="val">「未経験・ママでも“週4で月100万”サロン開業」の見出し＋説明会の様子・受講生の声</div></div>
+        <div class="row"><div class="label">CTA</div><div class="val"><a href="https://biryokyosei.or.jp/faq/amatearsuform/" target="_blank" rel="noopener">参加費無料・顔出し不要の説明会に申し込む（参加必須）</a></div></div>
+        <div class="cre-copy">
+          経験も資格も、特別なスタートは必要ありません。開業初心者・子育て中のオーナー様が
+          “仕組み”で結果を出している理由を、経営塾の無料説明会でお伝えします。
+        </div>
+      </div>
+    </div>
+
+    <div class="cre-card">
+      <div class="cre-head">
+        <span class="cre-num">4</span>
+        <span class="cre-title">体力・価格競争からの解放訴求</span>
+        <span class="cre-tag">型B準拠</span>
+      </div>
+      <div class="cre-body">
+        <img class="cre-visual" src="素材画像/AI生成クリエイティブ/案4_体力価格競争解放訴求_1x1.png" alt="クリエイティブ案4：体力・価格競争からの解放訴求バナー">
+        <div class="row"><div class="label">ターゲット</div><div class="val">長時間・薄利多売の施術に消耗している既存サロンオーナー様</div></div>
+        <div class="row"><div class="label">ビジュアル</div><div class="val">「体力勝負／長時間勝負のサロン、続けるのがつらくなっていませんか？」の問いかけ見出し＋機器施術の短時間・高単価訴求</div></div>
+        <div class="row"><div class="label">CTA</div><div class="val"><a href="https://biryokyosei.or.jp/faq/amatearsuform/" target="_blank" rel="noopener">仕組み経営の詳細を無料説明会で聞く（参加必須）</a></div></div>
+        <div class="cre-copy">
+          1台6役×5分完結で、客単価＋1万円。体力を削らず、価格競争にも巻き込まれない。
+          小さく始めて、大きくしなくても〈太く、根深い〉安定経営を実現します。
+        </div>
+      </div>
+    </div>
+
+    <div class="caution-box">
+      <p class="head">⚠ 表現に関する留意事項</p>
+      <ul>
+        <li>「月商◯万円達成」等の実績数値は<strong>個別事例（個人の感想・実績）</strong>であることを明記し、
+          将来の成果を保証する表現（「必ず」「誰でも」等）は避けます</li>
+        <li>IPL・脂肪冷却等の機器効果表現は、医療的効能を想起させる断定表現を避け、
+          「施術」「サロンメニュー」の文脈で訴求します</li>
+        <li>「補助金対象」「助成金対象」は対象条件（人材開発支援制度等）を訴求時に誤認させない範囲で記載します</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 5. 運用の方向性 -->
+  <section class="section">
+    <div class="sec-label">Budget Plan</div>
+    <h2 class="sec-heading"><span class="icon">💴</span>初回お試しプラン｜運用の方向性</h2>
+    <div class="intro-box">
+      初回は<strong>お試し価格として広告費100,000円＋運用費50,000円（分析レポーティング＋クリエイティブ作成）
+      ＝150,000円〜/月</strong>で開始いたします。「機器×経営塾」という高単価商材のため、
+      <strong>説明会予約への誘導を主目的としたコンバージョン最適化キャンペーン</strong>として設計し、
+      エステティック通信が保有する<strong>約2.5万店舗のサロンデータベース</strong>を活用したカスタムオーディエンス配信を軸にします。
+    </div>
+    <div class="info-grid" style="margin-bottom:18px;">
+      <div class="info-card">
+        <h4>機器のCPA相場（問い合わせ獲得単価）</h4>
+        <p style="font-size:24px;font-weight:900;color:var(--accent);margin:4px 0;">30,000〜50,000円</p>
+        <p style="font-size:12px;color:#555;line-height:1.8;">説明会予約・問い合わせ1件あたりの獲得単価として、業界の機器系商材における一般的な相場感です。
+          本プランの成果評価はこの水準を目安とします。</p>
+      </div>
+      <div class="info-card">
+        <h4>初月の位置づけ</h4>
+        <p style="font-size:12.5px;color:#444;line-height:1.9;">
+          クリエイティブ4案を均等出稿し、どの訴求軸が説明会予約に強いかを見極める検証期間とします。
+          2ヶ月目以降、実績データをもとに配分・ターゲティングを最適化してまいります。
+        </p>
+      </div>
+    </div>
+    <div class="sim-box">
+      <div class="sim-title">▶ 月間広告費（運用費は別枠）</div>
+      <div class="sim-budget">¥100,000<small>/ 月（広告費）</small></div>
+      <div class="sim-grid">
+        <div class="sim-item">
+          <div class="sim-val">約110,000<span>回</span></div>
+          <div class="sim-key">想定インプレッション</div>
+        </div>
+        <div class="sim-item">
+          <div class="sim-val">約59,500<span>人</span></div>
+          <div class="sim-key">想定リーチ</div>
+        </div>
+        <div class="sim-item">
+          <div class="sim-val">約1,960<span>件</span></div>
+          <div class="sim-key">想定クリック数</div>
+        </div>
+      </div>
+      <p class="sim-note">
+        ※ エス通実績平均（CPM 908円・CPC 52円・CTR 1.78%）をベースに、広告費100,000円全額を配信に充てた場合の試算値です。<br>
+        ※ 機器のCPA相場30,000〜50,000円で換算すると、月間の想定問い合わせ・説明会予約件数は概ね2〜3件程度が目安となります。<br>
+        ※ 高単価商材・BtoBのご意思決定を伴うため、実際のCVR・CPAは変動が大きい点にご留意ください（詳細は下部注意事項参照）。
+      </p>
+      <div class="funnel-wrap">
+        <div class="funnel-step">
+          <div class="funnel-bar" style="height:120px;">約110,000</div>
+          <div class="funnel-label" style="color:rgba(255,255,255,0.8);">インプレッション</div>
+        </div>
+        <div class="funnel-arrow" style="color:rgba(255,255,255,0.5);">›</div>
+        <div class="funnel-step">
+          <div class="funnel-bar" style="height:78px;">約59,500</div>
+          <div class="funnel-label" style="color:rgba(255,255,255,0.8);">リーチ</div>
+        </div>
+        <div class="funnel-arrow" style="color:rgba(255,255,255,0.5);">›</div>
+        <div class="funnel-step">
+          <div class="funnel-bar" style="height:36px;">約1,960</div>
+          <div class="funnel-label" style="color:rgba(255,255,255,0.8);">クリック</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="alloc-wrap">
+      <h4 style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:6px;">クリエイティブ配分の方向性（4案・CTR連動の自動最適化）</h4>
+      <p style="font-size:12px;color:#666;line-height:1.85;margin-bottom:16px;">
+        固定配分ではなく、<strong>配信中のCTR実績に応じて予算配分を自動的に再配分</strong>する運用といたします。
+        初期は4案均等（各25%）でスタートし、日次〜週次でクリック率の高いクリエイティブへ配分を寄せていきます。
+      </p>
+      <div class="alloc-row">
+        <div class="alloc-label">① 再現性ストーリー</div>
+        <div class="alloc-bar-wrap"><div class="alloc-bar" style="width:25%;"><span>25%</span></div></div>
+        <div class="alloc-amt">初期値</div>
+      </div>
+      <div class="alloc-row">
+        <div class="alloc-label">② 機器×経営塾セット</div>
+        <div class="alloc-bar-wrap"><div class="alloc-bar" style="width:25%;"><span>25%</span></div></div>
+        <div class="alloc-amt">初期値</div>
+      </div>
+      <div class="alloc-row">
+        <div class="alloc-label">③ 開業者・若手向け</div>
+        <div class="alloc-bar-wrap"><div class="alloc-bar" style="width:25%;"><span>25%</span></div></div>
+        <div class="alloc-amt">初期値</div>
+      </div>
+      <div class="alloc-row">
+        <div class="alloc-label">④ 体力・価格競争解放</div>
+        <div class="alloc-bar-wrap"><div class="alloc-bar" style="width:25%;"><span>25%</span></div></div>
+        <div class="alloc-amt">初期値</div>
+      </div>
+      <p style="font-size:11.5px;color:#999;margin-top:14px;line-height:1.8;">
+        ※ Metaのキャンペーン予算最適化（CBO/Advantage+）機能、および運用担当による週次モニタリングを併用し、
+        CTRが平均を下回るクリエイティブは配分を落とし、上回るクリエイティブへ寄せる調整を継続的に行います。<br>
+        ※ 配分実績はエス通標準レポート（クリエイティブ別実績）で毎回可視化し、次クールの入稿判断に反映します。
+      </p>
+    </div>
+  </section>
+
+  <!-- 6. 運用フロー -->
+  <section class="section">
+    <div class="sec-label">Flow</div>
+    <h2 class="sec-heading"><span class="icon">🔄</span>運用フロー</h2>
+    <div class="img-card" style="margin-bottom:16px;">
+      <img src="素材画像/08_研修施術トレーニング風景.jpg" alt="サロンオーナー向け技術研修の様子" style="height:220px;">
+      <div class="cap"><strong>美療矯正協会のスクール研修風景</strong>「機器×経営塾」の“経営塾”パートを支える実践型研修の実際の様子</div>
+    </div>
+    <div class="flow">
+      <div class="flow-step">
+        <div class="flow-num">1</div>
+        <div class="flow-title">ヒアリング・<br>素材受領</div>
+        <div class="flow-desc">機器写真・大岐様の写真等の素材を確認</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">2</div>
+        <div class="flow-title">オーディエンス<br>設計</div>
+        <div class="flow-desc">2.5万店舗DBで開業層・既存サロン層のカスタムオーディエンスを構築</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">3</div>
+        <div class="flow-title">クリエイティブ<br>4案入稿</div>
+        <div class="flow-desc">複数枚ローテーション配信。CTAは説明会申込フォームに統一</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">4</div>
+        <div class="flow-title">配信・<br>最適化</div>
+        <div class="flow-desc">クリック率上位のクリエイティブへ配分を寄せてPDCA</div>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">5</div>
+        <div class="flow-title">レポート<br>納品</div>
+        <div class="flow-desc">エス通標準6指標＋クリエイティブ別実績で終了後レポートをご提出</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. 料金 -->
+  <section class="section">
+    <div class="sec-label">Pricing</div>
+    <h2 class="sec-heading"><span class="icon">💰</span>ご利用料金</h2>
+    <div class="price-box">
+      <div class="price-row">
+        <div class="price-item">運用費 <small>分析レポーティング＋クリエイティブ作成（初回お試し価格）</small></div>
+        <div class="price-val">50,000円 / 月</div>
+      </div>
+      <div class="price-row">
+        <div class="price-item">広告費</div>
+        <div class="price-val">100,000円 / 月</div>
+      </div>
+      <div class="price-row">
+        <div class="price-item">合計ご利用料金 <small>初回お試し価格</small></div>
+        <div class="price-val rec">150,000円〜 / 月</div>
+      </div>
+    </div>
+    <p style="font-size:11.5px;color:#aaa;margin-top:10px;line-height:1.85;">※ 別途消費税がかかります。2ヶ月目以降の継続プラン・広告費の増額については、実績を踏まえて別途ご相談させていただきます。</p>
+
+    <div class="donut-card" style="margin-top:16px;">
+      <svg width="140" height="140" viewBox="0 0 140 140">
+        <circle cx="70" cy="70" r="54" fill="none" stroke="#f0ede8" stroke-width="20"/>
+        <circle cx="70" cy="70" r="54" fill="none" stroke="#ff6900" stroke-width="20"
+          stroke-dasharray="226.2 339.3" stroke-dashoffset="0" transform="rotate(-90 70 70)"/>
+        <circle cx="70" cy="70" r="54" fill="none" stroke="#8ec664" stroke-width="20"
+          stroke-dasharray="113.1 339.3" stroke-dashoffset="-226.2" transform="rotate(-90 70 70)"/>
+        <text x="70" y="66" text-anchor="middle" font-size="20" font-weight="900" fill="#333">150,000</text>
+        <text x="70" y="84" text-anchor="middle" font-size="10" fill="#999">円 / 月</text>
+      </svg>
+      <div class="donut-legend">
+        <div class="item"><span class="dot" style="background:#ff6900;"></span>広告費 <strong>100,000円（約67%）</strong></div>
+        <div class="item"><span class="dot" style="background:#8ec664;"></span>運用費 <strong>50,000円（約33%）</strong></div>
+        <p style="font-size:11px;color:#999;line-height:1.7;margin-top:8px;">運用費には分析レポーティング・クリエイティブ作成費を含みます。</p>
+      </div>
+    </div>
+    <div class="caution-box">
+      <p class="head">⚠ 成果に関する注意事項</p>
+      <ul>
+        <li>本提案の数値はエス通過去実績・一般値をもとにした試算であり、成果を保証するものではありません。</li>
+        <li>高単価商材（機器＋経営塾）のため、説明会予約後の成約率はLP・説明会内容・フォロー体制に依存します。</li>
+        <li>初月は情報収集期間と位置づけ、2ヶ月目以降にクリエイティブ・ターゲティングの最適化を進める運用を推奨いたします。</li>
+      </ul>
+    </div>
+  </section>
+
+</div>
+
+<footer class="footer">
+  <strong>株式会社新東通信　エステティック通信チーム</strong><br>
+  本資料に記載の数値は参考値であり、実際の成果を保証するものではございません。<br>
+  © 2026 Shinto Tsushin Inc. All rights reserved.
+</footer>
+
+</body>
+</html>
