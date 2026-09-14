@@ -213,6 +213,31 @@
   .alloc-bar span { font-size: 10.5px; color:#fff; font-weight:700; }
   .alloc-amt { width: 60px; text-align:right; font-size:12.5px; font-weight:700; color:#999; flex-shrink:0; }
 
+  /* ターゲティング：オーディエンスセグメント */
+  .segment-grid { display:grid; grid-template-columns: repeat(3,1fr); gap:16px; margin-top:18px; }
+  .segment-card { background:#fff; border:1px solid var(--border); border-radius:10px; overflow:hidden; display:flex; flex-direction:column; }
+  .segment-card.primary { border-color: var(--primary); box-shadow: 0 4px 16px rgba(110,168,63,0.12); }
+  .segment-head { background: var(--bg-soft); padding:14px 16px; border-bottom:1px solid var(--border); }
+  .segment-card.primary .segment-head { background: var(--primary); }
+  .segment-head .tag { display:flex; align-items:center; justify-content:space-between; font-size:10px; font-weight:700; letter-spacing:0.06em; color:var(--primary-d); margin-bottom:4px; }
+  .segment-card.primary .segment-head .tag { color:rgba(255,255,255,0.85); }
+  .segment-head .tag .priority { background: var(--accent); color:#fff; padding:2px 8px; border-radius:10px; font-size:9.5px; }
+  .segment-head h5 { font-size:13.5px; font-weight:700; color:var(--text); line-height:1.5; }
+  .segment-card.primary .segment-head h5 { color:#fff; }
+  .segment-body { padding:14px 16px; flex:1; }
+  .segment-body table { width:100%; border-collapse:collapse; }
+  .segment-body td { font-size:11px; padding:5px 0; line-height:1.7; vertical-align:top; border-bottom: 1px dashed var(--border); }
+  .segment-body tr:last-child td { border-bottom:none; }
+  .segment-body td.k { color:#999; width:40%; white-space:nowrap; padding-right:6px; }
+
+  /* ターゲティング：プレースメント方針 */
+  .place-list { display:flex; flex-direction:column; gap:10px; margin-top:16px; }
+  .place-item { display:flex; align-items:center; gap:14px; background:#fff; border:1px solid var(--border); border-radius:8px; padding:12px 16px; }
+  .place-item .place-tag { flex-shrink:0; width:104px; font-size:11px; font-weight:700; padding:6px 0; text-align:center; border-radius:6px; background:var(--primary-l); color:var(--primary-d); }
+  .place-item.exclude .place-tag { background:#fdf0f0; color:#c0392b; }
+  .place-item p { font-size:12px; color:#555; line-height:1.75; }
+  .place-item p strong { color:var(--text); }
+
   .flow { display: flex; gap: 0; align-items: stretch; background: #fff; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
   .flow-step { flex: 1; padding: 22px 16px; text-align: center; position: relative; border-right: 1px solid var(--border); }
   .flow-step:last-child { border-right: none; }
@@ -238,12 +263,14 @@
 
   @media(max-width: 700px){
     .info-grid, .ig-pattern { grid-template-columns: 1fr; }
+    .segment-grid { grid-template-columns: 1fr; }
     .sim-grid { grid-template-columns: 1fr; }
     .flow { flex-direction: column; }
     .flow-step::after { display: none; }
     .hero h1 { font-size: 22px; }
     .alloc-label { width: 110px; font-size: 11.5px; }
     .cta-box a.cta-btn { margin-left: 0; }
+    .place-item { flex-direction: column; align-items: flex-start; gap: 6px; }
   }
 </style>
 </head>
@@ -570,7 +597,138 @@
     </div>
   </section>
 
-  <!-- 5. 運用の方向性 -->
+  <!-- 5. ターゲティング設計 -->
+  <section class="section">
+    <div class="sec-label">Targeting Design</div>
+    <h2 class="sec-heading"><span class="icon">🎯</span>ターゲティング設計｜機器・セミナー特性からの逆算</h2>
+    <div class="intro-box">
+      配信対象は「今すぐ機器を買う人」ではなく、<strong>将来的にサロン経営の意思決定をする可能性がある層＝現役・志望のサロンオーナー</strong>を
+      広く拾う設計とします。これは機器とセミナーそれぞれの特性から導いた結論です。
+    </div>
+    <div class="info-grid">
+      <div class="info-card">
+        <h4>① 機器（AMATERASU／CryoCell）の特性</h4>
+        <ul>
+          <li>「1台6役×5分完結」「客単価＋1万円」を実現する<strong>省力型・高単価の資本財</strong>であり、経営塾とのセット販売のため機器単体の相場より価格帯が高く、<strong>検討期間を要するBtoB型の意思決定</strong>が発生する</li>
+          <li>人材開発支援制度（助成金）対象コースがあり、<strong>一定の事業規模を持つ既存事業者</strong>にも訴求可能</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h4>② セミナー（無料Zoom説明会）の特性</h4>
+        <ul>
+          <li>無料・60分・顔出し不要・「資料だけでもOK」という<strong>極めて低い参加ハードル</strong>で設計されており、その場での機器購入クロージングではなく<strong>リード獲得・信頼関係構築</strong>が一次目的</li>
+          <li>「未経験・ママでも」という間口の広い訴求のため、<strong>まだ意思決定初期段階の情報収集層</strong>も取り込める設計になっている</li>
+        </ul>
+      </div>
+    </div>
+    <p style="font-size:12.5px;color:#666;line-height:1.9;margin-top:14px;">
+      → 上記2点より、キャンペーン目的は「購入コンバージョン」ではなく<strong>「説明会予約（リード獲得）」への最適化</strong>を継続し、
+      オーディエンスは下記3セグメントで広めに設計した上で、<strong>エス通保有の約2.5万店舗サロンデータベース（主に既存サロン運営者＝セグメントBに該当）を類似オーディエンスの種（シード）</strong>として、
+      セグメントA・Cへのリーチ拡張に活用します。
+    </p>
+
+    <div class="segment-grid">
+      <div class="segment-card primary">
+        <div class="segment-head">
+          <div class="tag">SEGMENT A・最重点<span class="priority">配分50%</span></div>
+          <h5>新規開業検討層</h5>
+        </div>
+        <div class="segment-body">
+          <table>
+            <tr><td class="k">年代</td><td>28〜45歳</td></tr>
+            <tr><td class="k">性別</td><td>女性中心（約95%）</td></tr>
+            <tr><td class="k">地域</td><td>全国（Zoom対応）。家賃・初期費用を抑えやすい地方中核都市・郊外エリアの自宅サロン開業ニーズも含め全国配信</td></tr>
+            <tr><td class="k">属性</td><td>美容専門学校卒／元エステ・ネイル等美容業界経験者、産休・育休中や子育てを機に働き方を見直したい層</td></tr>
+            <tr><td class="k">興味関心</td><td>独立・開業、副業、美容機器、助成金・補助金、ワークライフバランス</td></tr>
+            <tr><td class="k">紐付く型</td><td>クリエイティブ①再現性訴求・③開業者・若手向け</td></tr>
+          </table>
+        </div>
+      </div>
+      <div class="segment-card">
+        <div class="segment-head">
+          <div class="tag">SEGMENT B<span class="priority" style="background:var(--primary-d);">配分35%</span></div>
+          <h5>既存小規模サロン運営者</h5>
+        </div>
+        <div class="segment-body">
+          <table>
+            <tr><td class="k">年代</td><td>35〜55歳</td></tr>
+            <tr><td class="k">性別</td><td>女性中心（約90%）</td></tr>
+            <tr><td class="k">地域</td><td>全国</td></tr>
+            <tr><td class="k">属性</td><td>個人事業主・小規模法人のサロンオーナー（開業3年以上）。フェイシャル／痩身／リラクゼーション業態、スタッフ1〜3名以下</td></tr>
+            <tr><td class="k">興味関心</td><td>サロン経営、客単価アップ、業務効率化、機器導入、スタッフ採用・育成</td></tr>
+            <tr><td class="k">紐付く型</td><td>クリエイティブ②機器×経営塾セット・④体力・価格競争解放</td></tr>
+          </table>
+        </div>
+      </div>
+      <div class="segment-card">
+        <div class="segment-head">
+          <div class="tag">SEGMENT C<span class="priority" style="background:#aaa;">配分15%</span></div>
+          <h5>若手・後継スタッフ層</h5>
+        </div>
+        <div class="segment-body">
+          <table>
+            <tr><td class="k">年代</td><td>25〜35歳</td></tr>
+            <tr><td class="k">性別</td><td>女性中心（約90%）</td></tr>
+            <tr><td class="k">地域</td><td>全国</td></tr>
+            <tr><td class="k">属性</td><td>サロン勤務エステティシャン、独立準備中、実家サロンの後継予定者</td></tr>
+            <tr><td class="k">興味関心</td><td>キャリアアップ、独立準備、資格取得、経営知識の習得</td></tr>
+            <tr><td class="k">紐付く型</td><td>クリエイティブ③開業者・若手向け経営塾セミナー訴求</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="alloc-wrap">
+      <h4 style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:6px;">セグメント別 予算配分（初期仮説）</h4>
+      <p style="font-size:12px;color:#666;line-height:1.85;margin-bottom:16px;">
+        Instagram分析（前セクション）で最大リーチを記録した「原体験ストーリー」が最も刺さる<strong>セグメントAに厚めに配分</strong>し、
+        機器のコア機能訴求に直結する<strong>セグメントB</strong>を次点、将来の顧客基盤拡大を目的とした<strong>セグメントC</strong>を少数配分とします。
+        クリエイティブ配分（次セクション参照）と掛け合わせて運用し、週次でCTR実績に応じて調整します。
+      </p>
+      <div class="alloc-row">
+        <div class="alloc-label">A：新規開業検討層</div>
+        <div class="alloc-bar-wrap"><div class="alloc-bar" style="width:50%;"><span>50%</span></div></div>
+        <div class="alloc-amt">初期値</div>
+      </div>
+      <div class="alloc-row">
+        <div class="alloc-label">B：既存サロン運営者</div>
+        <div class="alloc-bar-wrap"><div class="alloc-bar" style="width:35%;"><span>35%</span></div></div>
+        <div class="alloc-amt">初期値</div>
+      </div>
+      <div class="alloc-row">
+        <div class="alloc-label">C：若手・後継スタッフ層</div>
+        <div class="alloc-bar-wrap"><div class="alloc-bar" style="width:15%;"><span>15%</span></div></div>
+        <div class="alloc-amt">初期値</div>
+      </div>
+    </div>
+
+    <h4 style="font-size:13px;font-weight:700;color:var(--text);margin-top:26px;margin-bottom:2px;">配置（プレースメント）方針</h4>
+    <div class="place-list">
+      <div class="place-item">
+        <div class="place-tag">最優先</div>
+        <p><strong>Instagramフィード／リール</strong>：大岐様アカウント分析で判明した「原体験×Before/After」「好奇心ギャップ型フック」の高リーチ傾向をクリエイティブに反映しやすく、本キャンペーンの主戦場とする</p>
+      </div>
+      <div class="place-item">
+        <div class="place-tag">補助</div>
+        <p><strong>Instagramストーリーズ</strong>：説明会日程のリマインドや期間限定告知など、フィード／リールで興味を持った層への再接触用に活用</p>
+      </div>
+      <div class="place-item">
+        <div class="place-tag">補助</div>
+        <p><strong>Facebookフィード</strong>：セグメントB（35〜55歳の既存サロン経営者）は依然Facebook利用率が高いため一定配分を確保</p>
+      </div>
+      <div class="place-item exclude">
+        <div class="place-tag">除外推奨</div>
+        <p><strong>Audience Network／Messenger</strong>：高単価・BtoB型商材のため、意図しない誤タップ流入によるリード品質低下を避ける</p>
+      </div>
+    </div>
+    <p style="font-size:11px;color:#999;margin-top:14px;line-height:1.8;">
+      ※ 上記セグメントは初期仮説であり、Metaのアルゴリズムは広めのオーディエンス（Advantage+ オーディエンス）の方が学習が進みやすい傾向があるため、
+      配信初期は興味関心・属性による厳格な絞り込みではなく<strong>「除外設定＋類似オーディエンスの種（コアオーディエンス）」として活用</strong>し、
+      実績データが溜まり次第、狭める・広げるの調整を行います。
+    </p>
+  </section>
+
+  <!-- 6. 運用の方向性 -->
   <section class="section">
     <div class="sec-label">Budget Plan</div>
     <h2 class="sec-heading"><span class="icon">💴</span>初回お試しプラン｜運用の方向性</h2>
@@ -578,7 +736,7 @@
       初回は<strong>お試し価格として広告費100,000円＋運用費50,000円（分析レポーティング＋クリエイティブ作成）
       ＝150,000円〜/月</strong>で開始いたします。「機器×経営塾」という高単価商材のため、
       <strong>説明会予約への誘導を主目的としたコンバージョン最適化キャンペーン</strong>として設計し、
-      エステティック通信が保有する<strong>約2.5万店舗のサロンデータベース</strong>を活用したカスタムオーディエンス配信を軸にします。
+      前セクションのセグメント設計と、エステティック通信が保有する<strong>約2.5万店舗のサロンデータベース</strong>を活用したカスタムオーディエンス配信を軸にします。
     </div>
     <div class="info-grid" style="margin-bottom:18px;">
       <div class="info-card">
@@ -669,7 +827,7 @@
     </div>
   </section>
 
-  <!-- 6. 運用フロー -->
+  <!-- 7. 運用フロー -->
   <section class="section">
     <div class="sec-label">Flow</div>
     <h2 class="sec-heading"><span class="icon">🔄</span>運用フロー</h2>
@@ -702,7 +860,7 @@
     </div>
   </section>
 
-  <!-- 7. 料金 -->
+  <!-- 8. 料金 -->
   <section class="section">
     <div class="sec-label">Pricing</div>
     <h2 class="sec-heading"><span class="icon">💰</span>ご利用料金</h2>
